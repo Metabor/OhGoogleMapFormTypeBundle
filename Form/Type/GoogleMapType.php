@@ -11,6 +11,7 @@ use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class GoogleMapType extends AbstractType
 {
@@ -32,7 +33,7 @@ class GoogleMapType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'type'           => 'text',  // the types to render the lat and lng fields as
+            'type'           => TextType::class,  // the types to render the lat and lng fields as
             'options'        => array(), // the options for both the fields
             'lat_options'  => array(),   // the options for just the lat field
             'lng_options' => array(),    // the options for just the lng field
